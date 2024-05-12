@@ -72,9 +72,15 @@
         <input type="hidden" value="<%=id%>" name="id">
         <div class="form-group">
             <label for="orderNumber">Order Number:</label>
-            <input type="text" id="orderNumber" name="orderNumber" value="<%=id == null ? "" : orderNumber%>"> required>
+            <input type="text" id="orderNumber" name="orderNumber" value="<%=id == null ? "" : orderNumber%>">
             <label for="status">Order Status:</label>
-            <input type="text" id="Status" name="status" value="<%=id == null ? "" : status%>"> required>
+            <select name="status" id="status">
+                <option disabled >Select status</option>
+                <option value="created">Created</option>
+                <option value="inprogres">Inprogres</option>
+                <option value="complated">Complated</option>
+            </select>
+
         </div>
         <div class="form-group">
             <label for="products">Products:</label>
