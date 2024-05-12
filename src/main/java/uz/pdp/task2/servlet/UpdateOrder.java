@@ -23,6 +23,7 @@ public class UpdateOrder extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String id = req.getParameter("id");
         String orderNumberStr = req.getParameter("orderNumber");
+        String orderStatus = req.getParameter("status");
         String[] productIds = req.getParameterValues("products");
 
         int orderNumber = Integer.parseInt(orderNumberStr);
@@ -30,6 +31,7 @@ public class UpdateOrder extends HttpServlet {
         OrderRepo orderRepo = new OrderRepo();
         Order order = orderRepo.findById(Integer.parseInt(id));
         order.setOrderNumber(orderNumber);
+        order.setStatus(orderStatus);
         orderRepo.update(order);
 
         OrderProductRepo orderProductRepo = new OrderProductRepo();

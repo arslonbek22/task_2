@@ -34,6 +34,7 @@
                     <th>Created Time</th>
                     <th>Order Number</th>
                     <th>Products</th>
+                    <th>Status</th>
                     <%if (user != null && user.getRole().equals("ADMIN")){%>
                         <th>Actions</th>
                     <%}%>
@@ -55,9 +56,10 @@
                 <td><%= order.getOrderDate() %></td>
                 <td><%= order.getOrderNumber() %></td>
                 <td><%= orderProducts %></td>
+                <td><%= order.getStatus() %></td>
                 <% if (user != null && user.getRole().equals("ADMIN")) { %>
                     <td>
-                        <a href="/admin/createOrder.jsp?id=<%=order.getId()%>&orderNumber=<%=order.getOrderNumber()%>" class="btn btn-info">Edit</a>
+                        <a href="/admin/createOrder.jsp?id=<%=order.getId()%>&orderNumber=<%=order.getOrderNumber()%>&status=<%=order.getStatus()%>" class="btn btn-info">Edit</a>
                         <a href="/delete?id=<%=order.getId()%>" class="btn btn-danger">Delete</a>
                     </td>
                 <% } %>

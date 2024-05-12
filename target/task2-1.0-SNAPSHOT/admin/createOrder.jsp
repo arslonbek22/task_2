@@ -62,6 +62,7 @@
     ProductRepo productRepo = new ProductRepo();
     String id = request.getParameter("id");
     String orderNumber = request.getParameter("orderNumber");
+    String status = request.getParameter("status");
     List<Product> products = productRepo.findAll();
 %>
 
@@ -72,6 +73,8 @@
         <div class="form-group">
             <label for="orderNumber">Order Number:</label>
             <input type="text" id="orderNumber" name="orderNumber" value="<%=id == null ? "" : orderNumber%>"> required>
+            <label for="status">Order Status:</label>
+            <input type="text" id="Status" name="status" value="<%=id == null ? "" : status%>"> required>
         </div>
         <div class="form-group">
             <label for="products">Products:</label>

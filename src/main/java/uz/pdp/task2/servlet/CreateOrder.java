@@ -20,11 +20,13 @@ public class CreateOrder extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String orderNumberStr = req.getParameter("orderNumber");
+        String orderStatus = req.getParameter("status");
         String[] productIds = req.getParameterValues("products");
 
         int orderNumber = Integer.parseInt(orderNumberStr);
 
         Order order = Order.builder()
+                .status(orderStatus)
                 .orderNumber(orderNumber)
                 .orderDate(LocalDate.now().atStartOfDay())
                 .build();
