@@ -31,11 +31,11 @@ public class Login extends HttpServlet{
     }
 
     private User findByUserNameAndPassword(String login, String password) {
-        List<User> users = UserRepo.findAllUsers();
+        UserRepo userRepo = new UserRepo();
+        List<User> users = userRepo.findAll();
         Optional<User> optional = users.stream().
                 filter(item -> item.getUsername().equals(login) && item.getPassword().equals(password))
                 .findFirst();
         return optional.orElse(null);
-
     }
 }

@@ -20,6 +20,7 @@ public class Order extends ParentEntity {
     private LocalDateTime orderDate;
 
     private int orderNumber;
+
     private String status;
 
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "order")

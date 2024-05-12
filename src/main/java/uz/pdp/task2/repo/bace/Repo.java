@@ -7,7 +7,7 @@ import java.util.List;
 
 import static uz.pdp.task2.listener.MyListener.emf;
 
-public class Repo<T, ID> {
+public abstract class Repo<T, ID> {
     private Class<T> entityClass;
 
     @SuppressWarnings("unchecked")

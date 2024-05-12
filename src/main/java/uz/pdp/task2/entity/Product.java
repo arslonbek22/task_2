@@ -13,7 +13,7 @@ import uz.pdp.task2.entity.template.ParentEntity;
 @Data
 @Builder
 public class Product extends ParentEntity {
-    private String name;
 
+    private String name;
     private int price;
 }

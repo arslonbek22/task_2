@@ -17,15 +17,27 @@
     User user = (User)session.getAttribute("user");
     OrderRepo orderRepo = new OrderRepo();
     List<Order> orders = orderRepo.findAll();
+    String status = request.getParameter("status");
+    if (status!=null){
+        orders = orderRepo.findAllStatus(status);
+    }
+
 
 %>
 
     <div class="bg bg-dark text-white m-1">
-        <a href="/admin/login.jsp" class="btn btn-info float-right">Log in</a>
+        <a href="<%=user==null?"/admin/login.jsp":"/logout"%>" class="btn btn-info float-right"><%=user==null?"Log in":"Log out"%></a>
+    </div>
+    <div>
+        <a href="/?status=created" class="btn btn-dark text-white">Created</a>
+        <a href="/?status=inprogres" class="btn btn-dark text-white">Inprogress</a>
+        <a href="/?status=complated" class="btn btn-dark text-white">Complate</a>
+        <a href="/" class="btn btn-dark text-white">All orders</a>
     </div>
     <div class="m-auto">
         <%if (user != null && user.getRole().equals("ADMIN")){%>
         <a href="/admin/createOrder.jsp" class="m-1 float-right btn btn-success">Create order</a>
+        <a href="/User.jsp" class="m-1 float-right btn btn-success">Users</a>
         <%}%>
         <table class="table table-stripped">
             <thead>

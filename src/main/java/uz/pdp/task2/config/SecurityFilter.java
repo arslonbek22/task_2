@@ -15,7 +15,11 @@ import java.util.logging.LogRecord;
 @WebFilter("/*")
 public class SecurityFilter implements Filter {
     List<String> closedPages = new ArrayList<>(List.of(
-            "/admin/createOrder.jsp"
+            "/admin/createOrder.jsp",
+            "/admin/addUser.jsp",
+            "/User.jsp",
+            "/user/add",
+            "/user/delete"
     ));
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {

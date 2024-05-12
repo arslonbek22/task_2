@@ -8,7 +8,7 @@
     <properties>
       <property name="jakarta.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/task_2"/>
       <property name="jakarta.persistence.jdbc.user" value="postgres"/>
-      <property name="jakarta.persistence.jdbc.password" value="salmonsroot2006"/>
+      <property name="jakarta.persistence.jdbc.password" value="1234"/>
       <property name="jakarta.persistence.jdbc.driver" value="org.postgresql.Driver"/>
       <property name="hibernate.hbm2ddl.auto" value="update"/>
       <property name="show_sql" value="true"/>
