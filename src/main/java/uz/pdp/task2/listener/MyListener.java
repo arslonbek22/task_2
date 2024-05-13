@@ -21,7 +21,7 @@ public class MyListener implements ServletContextListener {
     @Override
     public void contextInitialized(ServletContextEvent sce) {
         emf = Persistence.createEntityManagerFactory("task2");
-        /*User user = User.builder().username("admin").password("admin").role("ADMIN").build();
+        User user = User.builder().username("admin").password("admin").role("ADMIN").build();
         User user1 = User.builder().username("user").password("user").role("USER").build();
         new UserRepo().save(user);
         new UserRepo().save(user1);
@@ -35,7 +35,7 @@ public class MyListener implements ServletContextListener {
         );
         for (Product product : products) {
             new ProductRepo().save(product);
-        }*/
+        }
         ServletContextListener.super.contextInitialized(sce);
     }
 }

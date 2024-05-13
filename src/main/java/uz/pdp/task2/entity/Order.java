@@ -15,6 +15,7 @@ import java.util.List;
 @Table(name = "orders")
 @Entity
 @Builder
+
 public class Order extends ParentEntity {
     @Column(columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
     private LocalDateTime orderDate;
@@ -23,6 +24,6 @@ public class Order extends ParentEntity {
 
     private String status;
 
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "order")
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "order", cascade = CascadeType.REMOVE)
     List<OrderProduct> orderProducts;
 }

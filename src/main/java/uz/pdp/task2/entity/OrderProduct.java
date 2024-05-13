@@ -1,9 +1,8 @@
 package uz.pdp.task2.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.Cascade;
 import uz.pdp.task2.entity.template.ParentEntity;
 @EqualsAndHashCode(callSuper = true)
 @AllArgsConstructor
@@ -17,6 +16,6 @@ public class OrderProduct extends ParentEntity {
     @ManyToOne(fetch = FetchType.LAZY)
     private Product product;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
     private Order order;
 }
